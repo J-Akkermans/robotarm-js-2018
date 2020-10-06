@@ -11,8 +11,27 @@
         // Het level inladen
         robotArm.loadLevel("exercise 12");
         // De door jou opgegeven instructies uitvoeren
-        
+        var angleRight = 9;
 
+        for(x = 1; x<=9; x++){
+            robotArm.grab();
+            var scan = robotArm.scan();
+            if(scan == "red"){
+                for(y = 1; y <= angleRight; y++){
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for(z = 1; z <= angleRight; z++){
+                    robotArm.moveLeft();
+                }
+            }
+            else {
+                robotArm.drop();
+            }
+            robotArm.moveRight();
+            angleRight = angleRight -1;
+        }
+        
         robotArm.run();
     </script>
 </body>

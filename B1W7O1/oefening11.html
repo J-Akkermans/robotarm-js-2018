@@ -11,7 +11,20 @@
         // Het level inladen
         robotArm.loadLevel("exercise 10");
         // De door jou opgegeven instructies uitvoeren
-        
+        for(x = 0; x <=8; x++){
+            robotArm.moveRight();
+        }
+        for(y=1; y<=9; y++){
+            robotArm.grab();
+            scan = robotArm.scan();
+            if(scan == "white"){
+                robotArm.moveRight();
+                robotArm.drop();
+            }else{
+                robotArm.drop();
+            }
+            robotArm.moveLeft();
+        }
         robotArm.run();
     </script>
 </body>
