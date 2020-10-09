@@ -6,7 +6,7 @@
             var canvas = document.getElementById("canvas");
             var robotArm = new RobotArm(canvas);
 
-            robotArm.randomLevel(1, 13);
+            robotArm.randomLevel(1, 8);
             
             var Angleright = 10;
             var move = true;
@@ -28,7 +28,7 @@
             if(Angleright == 1){
                 move=false
             }
-            }while(on==move)
+            }while(move == true)
             robotArm.run();
 
             
